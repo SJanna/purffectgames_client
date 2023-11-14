@@ -2,67 +2,93 @@
 import React, { useMemo, useState } from "react";
 import GameList from "@/Components/GameList";
 import { games } from "@/data/games";
-import filterGames from "@/utils/filterGames";
+import sortGames from "@/utils/sortGames";
 import FilterPanel from "@/Components/FilterPanel";
 import { Box, Grid } from "@mui/material";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import ModalFilter from "@/Components/ModalFilter";
 
-const page = () => {
-  const [filterType, setFilterType] = useState("All"); // Provide a default value
-  const [searchTerm, setSearchTerm] = useState("");
-  // const [filteredGames, setFilteredGames] = useState(games);
+const Page = () => {
+  const [filterOptions, setFilterOptions] = useState({
+    sortType: "All",
+    searchTerm: "",
+    priceRange: [0, Infinity],
+    popularityRange: [0, 10],
+    genres: Array<string>(),
+    platforms: Array<string>(),
+  });
 
-  // Use useMemo to memoize the filtered games
+  const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
+
   const memoizedFilteredGames = useMemo(() => {
-    let filteredByFilterType = filterGames({ filterType, games });
-    if (searchTerm.trim() !== "") {
-      filteredByFilterType = filteredByFilterType.filter((game) =>
+    let filteredGamesCopy = [...games];
+
+    // Apply filter by sortType
+    filteredGamesCopy = sortGames({
+      sortType: filterOptions.sortType,
+      games: filteredGamesCopy,
+    });
+
+    // Apply other filters
+    filteredGamesCopy = filteredGamesCopy.filter((game) => {
+      // Implement your other filter logic here
+      const { priceRange, popularityRange, genres, platforms, searchTerm } =
+        filterOptions;
+
+      const passesPriceRange =
+        game.price >= priceRange[0] && game.price <= priceRange[1];
+      const passesPopularityRange =
+        game.popularity >= popularityRange[0] &&
+        game.popularity <= popularityRange[1];
+      const passesGenres = genres.length === 0 || genres.includes(game.genre);
+      const passesPlatforms =
+        platforms.length === 0 || platforms.includes(game.platform);
+      const passesSearchTerm =
+        searchTerm.trim() === "" ||
         Object.entries(game)
-          .filter(([key, value]) => typeof value === "string" && key !== "img") // Exclude 'img' property
+          .filter(([key, value]) => typeof value === "string" && key !== "img")
           .some(([key, value]) => {
             if (typeof value === "string") {
               return value.toLowerCase().includes(searchTerm.toLowerCase());
             }
             return false;
-          })
-      );
-    }
-    return filteredByFilterType;
-  }, [filterType, games, searchTerm]);
+          });
 
-  const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
+      return (
+        passesPriceRange &&
+        passesPopularityRange &&
+        passesGenres &&
+        passesPlatforms &&
+        passesSearchTerm
+      );
+    });
+
+    return filteredGamesCopy;
+  }, [filterOptions, games]);
 
   const handleOpenFilterPanel = () => {
     setIsFilterPanelOpen((prevState) => !prevState);
-  };
-
-  const handleApplyFilter = () => {
-    // Lógica para aplicar filtros desde el modal
-    // Puedes acceder a los valores de los campos del modal y aplicar filtros adicionales aquí
   };
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Box sx={{ marginTop: "10vh", marginBottom: "5vh" }}>
         <FilterPanel
-          filterType={filterType}
-          setFilterType={setFilterType}
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
+          filterOptions={filterOptions}
+          setFilterOptions={setFilterOptions}
           handleOpenFilterPanel={handleOpenFilterPanel}
         />
+        <Box sx={{ marginTop: 4 }} />
         <Grid container spacing={2}>
           {isFilterPanelOpen && (
             <Grid item xs={12} sm={12} md={4} lg={2}>
               <ModalFilter
-                open={isFilterPanelOpen}
-                onApplyFilter={handleApplyFilter}
+                filterOptions={filterOptions}
+                setFilterOptions={setFilterOptions}
               />
             </Grid>
           )}
-          {/* Si isfilterOpen, sino hacer.. */}
           {isFilterPanelOpen ? (
             <Grid item xs={12} sm={12} md={8} lg={10}>
               <GameList games={memoizedFilteredGames} />
@@ -78,13 +104,4 @@ const page = () => {
   );
 };
 
-export default page;
-
-// //Útil si se necesita hacer algo cuando cambia el estado de filteredGames
-// useEffect(() => {
-//   // Perform additional actions when memoizedFilteredGames changes
-//   console.log('Filtered games changed:', memoizedFilteredGames);
-
-//   // Update state
-//   setFilteredGames(memoizedFilteredGames);
-// }, [memoizedFilteredGames]);
+export default Page;

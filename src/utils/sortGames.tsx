@@ -1,14 +1,14 @@
 import { Game } from "@/types/Game";
 
-type FilterGamesProps = {
-  filterType: string;
+type SortGamesProps = {
+  sortType: string;
   games: Game[];
 };
 
-function filterGames({ filterType, games }: FilterGamesProps) {
+function sortGames({ sortType, games }: SortGamesProps) {
   let sortedGames;
 
-  switch (filterType) {
+  switch (sortType) {
     case "New Release":
       sortedGames = games
         .slice()
@@ -50,4 +50,4 @@ function filterGames({ filterType, games }: FilterGamesProps) {
   return sortedGames;
 }
 
-export default filterGames;
+export default sortGames;
