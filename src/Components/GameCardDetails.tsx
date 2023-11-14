@@ -97,7 +97,7 @@ function GameCardDetails({ open, handleClose, game }: GameCardDetailsProps) {
             </Grid>
             <Grid item xs={6}>
               <Typography variant="body2" color="text.secondary">
-                {game.realeaseDate}
+                {game.releaseDate}
               </Typography>
             </Grid>
             <Grid item xs={6}>

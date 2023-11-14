@@ -2,7 +2,7 @@
 import { Typography, Box } from "@mui/material";
 import { useState } from "react";
 import { Game } from "@/types/Game";
-import GameCardDetails from "@/Components/GamesSection/GameCardDetails";
+import GameCardDetails from "@/Components/GameCardDetails";
 import React from "react";
 
 type GameCardProps = {
@@ -19,7 +19,7 @@ function GameCard({ game }: GameCardProps) {
       <Box sx={gameCardStyle(game.img)} onClick={handleOpen}>
         <Typography
           variant="body1"
-          component="div"
+          component="p"
           align="center"
           sx={{
             color: "primary.contrastText",
@@ -51,8 +51,6 @@ const gameCardStyle = (imgUrl: string) => {
     backgroundRepeat: "no-repeat",
     textShadow: "10 10 10 black",
     minHeight: 200,
-    minWidth: "20vw",
-    maxWidth: "20vw",
     cursor: "pointer",
     boxShadow:
       "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2)",

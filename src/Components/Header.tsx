@@ -1,7 +1,7 @@
-// A hero image with a title, a subtitle and a button to shop now.
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import Link from "next/link";
 
 const heroImageStyle = {
   display: "flex",
@@ -35,9 +35,11 @@ function Header() {
       >
         Video games store
       </Typography>
-      <Button variant="contained" sx={{ mt: 3 }}>
-        Shop Now
-      </Button>
+      <Link href="/games" passHref>
+        <Button variant="contained" sx={{ mt: 3 }}>
+          Shop Now
+        </Button>
+      </Link>
     </Box>
   );
 }

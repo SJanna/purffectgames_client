@@ -44,7 +44,7 @@ export default function Footer() {
         sx={{
           py: 3,
           px: 2,
-          mt: "auto",
+          mt: "5%",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",

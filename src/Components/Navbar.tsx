@@ -9,22 +9,27 @@ import {
 } from "@mui/material";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Link from "next/link";
 
 const LogoName = () => {
   return (
-    <Box sx={{ display: "flex", alignItems: "center" }}>
-      <Avatar
-        alt="Logo"
-        src="/static/images/PurrfectGames_Logo.png"
-        sx={{ width: 100, height: 100 }}
-      />
-      <Typography
-        variant="h4"
-        component="div"
-        sx={{ color: "primary.contastText" }}
-      >
-        Purrfect Games
-      </Typography>
+    <Box sx={{ display: "flex", alignItems: "center"}}>
+      <Link href="/">
+        <Avatar
+          alt="Logo"
+          src="/static/images/PurrfectGames_Logo.png"
+          sx={{ width: 100, height: 100 }}
+        />
+      </Link>
+      <Link href="/" style={{textDecoration:'none', color: 'inherit'}} >
+        <Typography
+          variant="h4"
+          component="div"
+          sx={{ color: "primary.contastText"}}
+        >
+          Purrfect Games
+        </Typography>
+      </Link>
     </Box>
   );
 };
