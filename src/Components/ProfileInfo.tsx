@@ -1,3 +1,4 @@
+import { UserInfo } from "@/types/UserInfo";
 import {
   Box,
   Typography,
@@ -9,13 +10,7 @@ import {
 import React from "react";
 
 type ProfileInfoProps = {
-  userInfo: {
-    name: string;
-    email: string;
-    phone: string;
-    address: string;
-    age: number;
-  };
+  userInfo: UserInfo
 };
 
 export default function ProfileInfo({ userInfo }: ProfileInfoProps) {

@@ -36,10 +36,6 @@ const ModalFilter = ({
     });
   };
 
-  // const handleApplyFilter = () => {
-  //   onApplyFilter();
-  // };
-
   return (
     <Box
       sx={{

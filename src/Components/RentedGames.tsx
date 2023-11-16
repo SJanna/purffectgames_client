@@ -9,13 +9,7 @@ import {
   MaterialReactTable,
 } from "material-react-table";
 import { Chip } from "@mui/material";
-
-type RentedGamesInfo = {
-  game: Game;
-  rentDate: String;
-  returnDate: String;
-  active: boolean;
-};
+import { RentedGamesInfo } from "@/types/RentedGamesInfo";
 
 type RentedGamesProps = {
   rentedGamesInfo: RentedGamesInfo[];
