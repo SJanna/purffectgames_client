@@ -13,7 +13,7 @@ import Link from "next/link";
 
 const LogoName = () => {
   return (
-    <Box sx={{ display: "flex", alignItems: "center"}}>
+    <Box sx={{ display: "flex", alignItems: "center" }}>
       <Link href="/">
         <Avatar
           alt="Logo"
@@ -21,11 +21,11 @@ const LogoName = () => {
           sx={{ width: 100, height: 100 }}
         />
       </Link>
-      <Link href="/" style={{textDecoration:'none', color: 'inherit'}} >
+      <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
         <Typography
           variant="h4"
           component="div"
-          sx={{ color: "primary.contastText"}}
+          sx={{ color: "primary.contastText" }}
         >
           Purrfect Games
         </Typography>
@@ -37,13 +37,15 @@ const LogoName = () => {
 const NavbarIcons = () => {
   return (
     <Stack direction="row" spacing={1}>
-      <IconButton sx={{ color: "white" }}>
-        <ShoppingCartIcon fontSize="large" />
-      </IconButton>
+      <Link href="/cart">
+        <IconButton sx={{ color: "white" }}>
+          <ShoppingCartIcon fontSize="large" />
+        </IconButton>
+      </Link>
       <Link href="/profile">
-      <IconButton aria-label="Profile" sx={{ color: "white" }}>
-        <AccountCircle fontSize="large" />
-      </IconButton>
+        <IconButton aria-label="Profile" sx={{ color: "white" }}>
+          <AccountCircle fontSize="large" />
+        </IconButton>
       </Link>
     </Stack>
   );

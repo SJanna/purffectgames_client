@@ -1,6 +1,6 @@
 import React from "react";
-import ProfileInfo from "@/Components/ProfileInfo";
-import RentedGames from "@/Components/RentedGames";
+import ProfileInfo from "@/Components/ProfilePage/ProfileInfo";
+import RentedGames from "@/Components/ProfilePage/RentedGames";
 import { Box, Typography, Grid } from "@mui/material";
 import { rentedGamesInfo } from "@/data/rentedGamesInfo";
 import { userInfo } from "@/data/userInfo";

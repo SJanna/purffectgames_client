@@ -42,9 +42,8 @@ export default function Footer() {
       <Box
         component="footer"
         sx={{
-          py: 3,
-          px: 2,
-          mt: "5%",
+          mt: "auto",
+          py: 2,
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -54,7 +53,7 @@ export default function Footer() {
               : theme.palette.grey[800],
         }}
       >
-        <Stack  sx={{ marginLeft: 2, alignItems:'center' }} direction="row" spacing={1}>
+        <Stack  sx={{ marginLeft: '2vw', alignItems:'center' }} direction="row" spacing={1}>
         <Avatar
           alt="Logo"
           src="/static/images/PurrfectGames_Logo.png"
@@ -67,9 +66,9 @@ export default function Footer() {
           <Copyright />
         </Box>
         </Stack>
-        <Box sx={{ marginRight: 2 }}>
+        <Stack sx={{ marginRight: '2vw'}} direction="row" spacing={2}>
           <FooterIcons />
-        </Box>
+        </Stack>
       </Box>
     </ThemeProvider>
   );

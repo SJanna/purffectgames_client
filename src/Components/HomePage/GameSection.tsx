@@ -1,5 +1,5 @@
 import { Game } from "@/types/Game";
-import GameCard from "./GameCard";
+import GameCard from "../GameCard/GameCard";
 import { Box, Typography, Grid } from "@mui/material";
 import Link from "next/link";
 

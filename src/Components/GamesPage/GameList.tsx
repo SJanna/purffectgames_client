@@ -4,7 +4,7 @@ import {
   Grid,
 } from "@mui/material";
 import React from "react";
-import GameCard from "./GameCard";
+import GameCard from "../GameCard/GameCard";
 import { Game } from "@/types/Game";
 
 type GameListProps = {

@@ -2,7 +2,7 @@
 import { Typography, Box } from "@mui/material";
 import { useState } from "react";
 import { Game } from "@/types/Game";
-import GameCardDetails from "@/Components/GameCardDetails";
+import GameCardDetails from "@/Components/GameCard/GameCardDetails";
 import React from "react";
 
 type GameCardProps = {

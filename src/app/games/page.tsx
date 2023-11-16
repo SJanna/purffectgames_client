@@ -1,13 +1,13 @@
 "use client";
 import React, { useMemo, useState } from "react";
-import GameList from "@/Components/GameList";
+import GameList from "@/Components/GamesPage/GameList";
 import { games } from "@/data/games";
 import sortGames from "@/utils/sortGames";
-import FilterPanel from "@/Components/FilterPanel";
+import FilterPanel from "@/Components/GamesPage/FilterPanel";
 import { Box, Grid } from "@mui/material";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import ModalFilter from "@/Components/ModalFilter";
+import ModalFilter from "@/Components/GamesPage/ModalFilter";
 
 export default function Games() {
   const [filterOptions, setFilterOptions] = useState({

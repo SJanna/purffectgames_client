@@ -1,6 +1,6 @@
 //Fonts:
-import Header from "@/Components/Header";
-import GameSection from "@/Components/GameSection";
+import Header from "@/Components/HomePage/Header";
+import GameSection from "@/Components/HomePage/GameSection";
 import { games } from "@/data/games";
 import filterGames from "@/utils/sortGames";
 

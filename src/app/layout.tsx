@@ -1,7 +1,7 @@
-
-import Footer from "@/Components/Footer";
-import Navbar from "@/Components/Navbar";
+import Footer from "@/Components/Layout/Footer";
+import Navbar from "@/Components/Layout/Navbar";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Purffect Games",
@@ -15,10 +15,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-          <Navbar />
-          <div style={{ margin: "5% 2% 0 2%" }}>{children}</div>
-          <Footer />
+      <body
+        style={{ minHeight: "98vh", display: "flex", flexDirection: "column" }}
+      >
+        <Navbar />
+        <div style={{ margin: "5% 2% 0 2%" }}>
+          {children}
+          <div style={{ height: "10vh" }}></div>
+        </div>
+        <Footer />
       </body>
     </html>
   );
