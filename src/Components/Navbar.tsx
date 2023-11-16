@@ -40,9 +40,11 @@ const NavbarIcons = () => {
       <IconButton sx={{ color: "white" }}>
         <ShoppingCartIcon fontSize="large" />
       </IconButton>
+      <Link href="/profile">
       <IconButton aria-label="Profile" sx={{ color: "white" }}>
         <AccountCircle fontSize="large" />
       </IconButton>
+      </Link>
     </Stack>
   );
 };

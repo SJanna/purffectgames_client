@@ -29,7 +29,7 @@ const ModalFilter = ({
     setFilterOptions({
       sortType: "All",
       searchTerm: "",
-      priceRange: [0, Infinity],
+      priceRange: [0, 1000],
       popularityRange: [0, 10],
       genres: [],
       platforms: [],

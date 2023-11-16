@@ -9,11 +9,11 @@ import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import ModalFilter from "@/Components/ModalFilter";
 
-const Page = () => {
+export default function Games() {
   const [filterOptions, setFilterOptions] = useState({
     sortType: "All",
     searchTerm: "",
-    priceRange: [0, Infinity],
+    priceRange: [0, 1000],
     popularityRange: [0, 10],
     genres: Array<string>(),
     platforms: Array<string>(),
@@ -73,7 +73,7 @@ const Page = () => {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <Box sx={{ marginTop: "10vh", marginBottom: "5vh" }}>
+      <Box sx={{ marginBottom: "5vh" }}>
         <FilterPanel
           filterOptions={filterOptions}
           setFilterOptions={setFilterOptions}
@@ -104,4 +104,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+// export default Page;

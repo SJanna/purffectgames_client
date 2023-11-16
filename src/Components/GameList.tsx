@@ -17,7 +17,6 @@ const GameList = ({ games}: GameListProps) => {
     <>
       <Box
         sx={{
-          marginTop: 1,
           marginBottom: 10,
           display: "flex",
           justifyContent: "space-between",
