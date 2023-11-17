@@ -1,7 +1,6 @@
 import Footer from "@/Components/Layout/Footer";
 import Navbar from "@/Components/Layout/Navbar";
 import type { Metadata } from "next";
-import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Purffect Games",
