@@ -10,21 +10,17 @@ import {
 import React from "react";
 
 type ProfileInfoProps = {
-  userInfo: UserInfo
+  userInfo: UserInfo;
 };
 
 export default function ProfileInfo({ userInfo }: ProfileInfoProps) {
   return (
-    <Box
-      // sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-    >
-      <Card 
-      // sx={{ maxWidth: "70%" }}
-      >
+    <Box>
+      <Card>
         <CardMedia
           component="img"
           height="140"
-          image="https://source.unsplash.com/random"
+          image="https://source.unsplash.com/random?cat landscape"
           alt="Profile Picture"
         />
         <CardContent sx={{ justifyContent: "center" }}>

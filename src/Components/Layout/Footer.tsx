@@ -54,10 +54,10 @@ export default function Footer() {
         }}
       >
         <Stack  sx={{ marginLeft: '2vw', alignItems:'center' }} direction="row" spacing={1}>
-        <Avatar
+        <img
           alt="Logo"
           src="/static/images/PurrfectGames_Logo.png"
-          sx={{ width: 70, height: 70 }}
+          width={50}
         />
         <Box>
           <Typography variant="body1">

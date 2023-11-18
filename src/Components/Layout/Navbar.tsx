@@ -15,10 +15,10 @@ const LogoName = () => {
   return (
     <Box sx={{ display: "flex", alignItems: "center" }}>
       <Link href="/">
-        <Avatar
+        <img
           alt="Logo"
           src="/static/images/PurrfectGames_Logo.png"
-          sx={{ width: 100, height: 100 }}
+          width={50}
         />
       </Link>
       <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
