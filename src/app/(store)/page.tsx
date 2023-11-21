@@ -1,10 +1,12 @@
-//Fonts:
+"use client";
 import Header from "@/Components/HomePage/Header";
 import GameSection from "@/Components/HomePage/GameSection";
-import { games } from "@/data/games";
+import { useGetGames } from "@/hooks/useGetGames";
 import filterGames from "@/utils/sortGames";
 
+
 export default function Home() {
+  const games = useGetGames();
   return (
     <>
       <Header />

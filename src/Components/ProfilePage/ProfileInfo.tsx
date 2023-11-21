@@ -1,4 +1,4 @@
-import { UserInfo } from "@/types/UserInfo";
+import { Client } from "@/types/Client";
 import {
   Box,
   Typography,
@@ -7,13 +7,18 @@ import {
   CardMedia,
   CardContent,
 } from "@mui/material";
+import { run } from "node:test";
 import React from "react";
+import Loading from "@/app/(store)/loading";
 
 type ProfileInfoProps = {
-  userInfo: UserInfo;
+  Client: Client;
 };
 
-export default function ProfileInfo({ userInfo }: ProfileInfoProps) {
+export default function ProfileInfo({ Client }: ProfileInfoProps) {
+  if (!Client) {
+    return <Loading />;
+  }
   return (
     <Box>
       <Card>
@@ -25,7 +30,7 @@ export default function ProfileInfo({ userInfo }: ProfileInfoProps) {
         />
         <CardContent sx={{ justifyContent: "center" }}>
           <Typography gutterBottom variant="h5" component="div">
-            {userInfo.name}
+            {Client.first_name} {Client.last_name}
           </Typography>
           <Grid container spacing={1}>
             <Grid item xs={6}>
@@ -35,7 +40,7 @@ export default function ProfileInfo({ userInfo }: ProfileInfoProps) {
             </Grid>
             <Grid item xs={6}>
               <Typography variant="body2" color="text.secondary">
-                {userInfo.email}
+                {Client.email}
               </Typography>
             </Grid>
             <Grid item xs={6}>
@@ -45,7 +50,7 @@ export default function ProfileInfo({ userInfo }: ProfileInfoProps) {
             </Grid>
             <Grid item xs={6}>
               <Typography variant="body2" color="text.secondary">
-                {userInfo.phone}
+                {Client.phone}
               </Typography>
             </Grid>
             <Grid item xs={6}>
@@ -55,17 +60,17 @@ export default function ProfileInfo({ userInfo }: ProfileInfoProps) {
             </Grid>
             <Grid item xs={6}>
               <Typography variant="body2" color="text.secondary">
-                {userInfo.address}
+                {Client.address}
               </Typography>
             </Grid>
             <Grid item xs={6}>
               <Typography variant="body2" color="text.secondary">
-                Age:
+                Birth Date:
               </Typography>
             </Grid>
             <Grid item xs={6}>
               <Typography variant="body2" color="text.secondary">
-                {userInfo.age}
+                {Client.birth_date}
               </Typography>
             </Grid>
           </Grid>

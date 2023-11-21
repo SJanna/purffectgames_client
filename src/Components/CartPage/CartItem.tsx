@@ -67,11 +67,10 @@ const Item = ({ cartItem }: CartItemProps) => {
   return (
     <Box sx={{ display: "flex", flexDirection: "row" }}>
       <img
-        src={cartItem.img}
+        src={cartItem.image}
         alt={cartItem.title}
         style={{ width: 100, height: 100, marginRight: 10, borderRadius: 5, objectFit: "cover", cursor: "pointer" }}
         onClick={handleOpen}
-
       />
       <Box
         sx={{

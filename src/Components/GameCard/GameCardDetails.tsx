@@ -32,7 +32,7 @@ function GameCardDetails({ open, handleClose, game }: GameCardDetailsProps) {
         <CardMedia
           component="img"
           height="140"
-          image={game.img}
+          image={game.image}
           alt={game.title}
         />
         <CardContent sx={{ justifyContent: "center" }}>
@@ -97,7 +97,7 @@ function GameCardDetails({ open, handleClose, game }: GameCardDetailsProps) {
             </Grid>
             <Grid item xs={6}>
               <Typography variant="body2" color="text.secondary">
-                {game.releaseDate}
+                {game.release_date}
               </Typography>
             </Grid>
             <Grid item xs={6}>

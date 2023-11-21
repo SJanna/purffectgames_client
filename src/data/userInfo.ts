@@ -1,6 +1,6 @@
-import { UserInfo } from "@/types/UserInfo";
+import { Client } from "@/types/Client";
 
-export const userInfo: UserInfo = {
+export const Client: Client = {
   id: 1,
   name: "John Doe",
   email: "john@mail.com",

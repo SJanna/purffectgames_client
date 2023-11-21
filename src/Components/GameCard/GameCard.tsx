@@ -16,7 +16,7 @@ function GameCard({ game }: GameCardProps) {
 
   return (
     <>
-      <Box sx={gameCardStyle(game.img)} onClick={handleOpen}>
+      <Box sx={gameCardStyle(game.image)} onClick={handleOpen}>
         <Typography
           variant="body1"
           component="p"

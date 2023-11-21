@@ -14,8 +14,8 @@ function sortGames({ sortType, games }: SortGamesProps) {
         .slice()
         .sort(
           (a, b) =>
-            new Date(b.releaseDate).getTime() -
-            new Date(a.releaseDate).getTime()
+            new Date(b.release_date).getTime() -
+            new Date(a.release_date).getTime()
         );
       break;
 

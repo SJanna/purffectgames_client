@@ -1,33 +1,36 @@
 "use client";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import GameList from "@/Components/GamesPage/GameList";
-import { games } from "@/data/games";
+import { useGetGames } from "@/hooks/useGetGames";
 import sortGames from "@/utils/sortGames";
 import FilterPanel from "@/Components/GamesPage/FilterPanel";
 import { Box, Grid } from "@mui/material";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import ModalFilter from "@/Components/GamesPage/ModalFilter";
+import { Game } from "@/types/Game";
 
 export default function Games() {
   const [filterOptions, setFilterOptions] = useState({
     sortType: "All",
     searchTerm: "",
     priceRange: [0, 1000],
-    popularityRange: [0, 10],
+    popularityRange: [0, 100],
     genres: Array<string>(),
     platforms: Array<string>(),
   });
 
+  const games = useGetGames();
+
   const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
 
   const memoizedFilteredGames = useMemo(() => {
-    let filteredGamesCopy = [...games];
+    let filteredGamesCopy = games;
 
     // Apply filter by sortType
     filteredGamesCopy = sortGames({
       sortType: filterOptions.sortType,
-      games: filteredGamesCopy,
+      games: filteredGamesCopy as Game[],
     });
 
     // Apply other filters
@@ -47,7 +50,9 @@ export default function Games() {
       const passesSearchTerm =
         searchTerm.trim() === "" ||
         Object.entries(game)
-          .filter(([key, value]) => typeof value === "string" && key !== "img")
+          .filter(
+            ([key, value]) => typeof value === "string" && key !== "image"
+          )
           .some(([key, value]) => {
             if (typeof value === "string") {
               return value.toLowerCase().includes(searchTerm.toLowerCase());
@@ -102,6 +107,6 @@ export default function Games() {
       </Box>
     </LocalizationProvider>
   );
-};
+}
 
 // export default Page;

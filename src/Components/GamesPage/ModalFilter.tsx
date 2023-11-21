@@ -141,7 +141,7 @@ const ModalFilter = ({
         <Autocomplete
           size="small"
           multiple
-          options={genresData.map((genre) => genre.name)}
+          options={genresData.map((genre) => genre)}
           value={filterOptions.genres}
           onChange={(event, newValue) =>
             setFilterOptions({ ...filterOptions, genres: newValue as string[] })
@@ -156,7 +156,7 @@ const ModalFilter = ({
         <Autocomplete
           size="small"
           multiple
-          options={platformsData.map((platform) => platform.name)}
+          options={platformsData.map((platform) => platform)}
           value={filterOptions.platforms}
           onChange={(event, newValue) =>
             setFilterOptions({
