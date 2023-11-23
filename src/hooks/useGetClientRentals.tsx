@@ -1,15 +1,11 @@
 import { ClientRentals } from "@/types/ClientRentals";
-import { Game } from "@/types/Game";
 import React, { useEffect, useState } from "react";
 
-// un numero entre 1 y 50
-const id = Math.floor(Math.random() * 20) + 1;
+const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL + "/api/client_rentals/";
 
-const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL + "/api/client_rentals/" + id + "/";
-
-export const getClientRentals = async () => {
+export const getClientRentals = async (id: string) => {
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch(`${apiUrl + id}/`);
 
     if (!response.ok) {
       throw new Error(`Error al realizar la solicitud: ${response.statusText}`);
@@ -23,13 +19,13 @@ export const getClientRentals = async () => {
   }
 };
 
-export const useGetClientRentals = () => {
+export const useGetClientRentals = (id: string) => {
   const [clientRentals, setClientsRentals] = useState<ClientRentals[]>([]);
 
   useEffect(() => {
     const fetchDataAsync = async () => {
       try {
-        const result = await getClientRentals();
+        const result = await getClientRentals(id);
         setClientsRentals(result);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -37,7 +33,7 @@ export const useGetClientRentals = () => {
     };
 
     fetchDataAsync();
-  }, []);
+  }, [id]);
 
   return clientRentals;
 };

@@ -1,14 +1,11 @@
 import { Client } from "@/types/Client";
 import React, { useEffect, useState } from "react";
 
-// un numero entre 1 y 50
-const id = Math.floor(Math.random() * 20) + 1;
+const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL + "/api/clients/"
 
-const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL + "/api/clients/" + id + "/";
-
-export const getUser = async () => {
+export const getUser = async (id:string) => {
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch(`${apiUrl + id}/`);
 
     if (!response.ok) {
       throw new Error(`Error al realizar la solicitud: ${response.statusText}`);
@@ -18,26 +15,28 @@ export const getUser = async () => {
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);
-    throw error;
+        // throw error;
+    return undefined;
+
   }
 };
 
-export const useGetClient = () => {
+export const useGetClient = (id:string) => {
   const [user, setUser] = useState<Client>();
 
   useEffect(() => {
     const fetchDataAsync = async () => {
       try {
-        const result = await getUser();
+        const result = await getUser(id);
         setUser(result);
-        console.log(result);
       } catch (error) {
         console.error("Error fetching data:", error);
+        setUser(undefined);
       }
     };
 
     fetchDataAsync();
-  }, []);
+  }, [id]);
 
   return user;
 };
