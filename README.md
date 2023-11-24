@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Purffect Games - Client
 
-## Getting Started
+## Overview
 
-First, run the development server:
+<!-- ![Home](./images/logo.png) -->
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Welcome to Purffect Games Client application, your go-to platform for exploring and reserving video games. Built with Next.js, TypeScript, Material UI, react-query, and material-react-table, this application provides a seamless and enjoyable experience for game enthusiasts.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Table of Contents
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [Home](#home)
+- [Profile](#profile)
+- [Games](#games)
+- [Cart](#cart)
+- [Checkout](#checkout)
+- [Login](#login)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Home
 
-## Learn More
+The Home page offers a glimpse into the gaming world, showcasing the most popular and newest games. It serves as the starting point for navigating through the application.
 
-To learn more about Next.js, take a look at the following resources:
+<!-- ![Home](./images/client_home.png) -->
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Profile
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The Profile page allows users to view their personal information and displays a table of their rental history. This feature enables users to track and manage their gaming experiences.
+(Actually, this page show the information of a user by selecting and UserID, because the application doesn't have a authentication system yet)
 
-## Deploy on Vercel
+<!-- ![Profile](./images/client_profile.png) -->
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Games
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The Games page provides a comprehensive list of all available games, complete with filtering and sorting options. Users can easily find their favorite games and discover new ones within this user-friendly interface.
+
+<!-- ![Games](./images/client_games.png) -->
+
+## Cart
+
+The Cart page displays the games added to the user's cart, along with relevant information. This page serves as a hub for managing the games selected for reservation.
+
+<!-- ![Cart](./images/client_cart.png) -->
+
+## Checkout
+
+The Checkout page presents a user-friendly form for completing the reservation process. Users can provide the necessary information and proceed to reserve their selected games.
+
+<!-- ![Checkout](./images/client_checkout.png) -->
+
+## Login
+
+The Login page enables users to authenticate and access their personalized profiles. A secure and straightforward login process enhances the overall user experience.
+(Actually, this page is just a placeholder, because the application doesn't have a authentication system yet)
+
+
+![Login](./images/client_login.png)
+
+## Technologies Used
+
+- **Next.js**: A powerful React framework for building client-side web applications.
+- **TypeScript**: Enhances code quality and developer productivity with static typing.
+- **Material UI**: A React UI framework for creating visually appealing and consistent user interfaces.
+- **React Query**: Simplifies data fetching and state management, optimizing application performance.
+- **Material-React-Table**: A feature-rich table library for React, facilitating the implementation of dynamic tables.
+
+## How to Use
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/SJanna/purffectgames_client.git
+   ```
+
+2. **Install Dependencies:**
+   ```bash
+   cd purffectgames_client
+   npm install
+   ```
+
+3. **Run the Application:**
+   ```bash
+   npm run dev -- -p 3001
+   ```
+
+4. **Access the Application:**
+   Open your browser and navigate to [http://localhost:3001](http://localhost:3001).
+
+## Additional Information
+
+For any inquiries or support, please contact [sjannadiaz@gmail.com](mailto:sjannadiaz@gmail.com). We're here to ensure your gaming journey is nothing short of purrfect!

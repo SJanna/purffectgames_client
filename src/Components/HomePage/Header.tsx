@@ -37,7 +37,7 @@ function Header() {
       </Typography>
       <Link href="/games" passHref>
         <Button variant="contained" sx={{ mt: 3 }}>
-          Shop Now
+          Show More
         </Button>
       </Link>
     </Box>
