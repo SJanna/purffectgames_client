@@ -85,4 +85,4 @@ The Login page enables users to authenticate and access their personalized profi
 
 ## Additional Information
 
-For any inquiries or support, please contact [sjannadiaz@gmail.com](mailto:sjannadiaz@gmail.com). We're here to ensure your gaming journey is nothing short of purrfect!
+For any inquiries or support, please contact me [sjannadiaz@gmail.com](mailto:sjannadiaz@gmail.com). We're here to ensure your gaming journey is nothing short of purrfect!
