@@ -1,8 +1,7 @@
 # Purffect Games - Client
 
-## Overview
-
-<!-- ![Home](./images/logo.png) -->
+## Overwiew
+<p align="center"><img aling="center" src="https://github.com/SJanna/purffectgames_client/assets/70728090/63baa240-79ba-497d-a70d-9cb20e827ee9" alt="Purffectgames Logo" width="200" height="200"></p>
 
 Welcome to Purffect Games Client application, your go-to platform for exploring and reserving video games. Built with Next.js, TypeScript, Material UI, react-query, and material-react-table, this application provides a seamless and enjoyable experience for game enthusiasts.
 
@@ -19,32 +18,37 @@ Welcome to Purffect Games Client application, your go-to platform for exploring 
 
 The Home page offers a glimpse into the gaming world, showcasing the most popular and newest games. It serves as the starting point for navigating through the application.
 
-<!-- ![Home](./images/client_home.png) -->
+![Home](https://github.com/SJanna/purffectgames_client/assets/70728090/d474e760-83a2-4afd-bc24-5a696fcbca8a)
+
 
 ## Profile
 
 The Profile page allows users to view their personal information and displays a table of their rental history. This feature enables users to track and manage their gaming experiences.
 (Actually, this page show the information of a user by selecting and UserID, because the application doesn't have a authentication system yet)
 
-<!-- ![Profile](./images/client_profile.png) -->
+![Profile](https://github.com/SJanna/purffectgames_client/assets/70728090/451cb09d-5c07-4552-a39a-ac7afdd5afa6)
+
 
 ## Games
 
 The Games page provides a comprehensive list of all available games, complete with filtering and sorting options. Users can easily find their favorite games and discover new ones within this user-friendly interface.
 
-<!-- ![Games](./images/client_games.png) -->
+![Games](https://github.com/SJanna/purffectgames_client/assets/70728090/7df2bef0-01e8-40f8-b142-daaf2fc31393)
+
 
 ## Cart
 
 The Cart page displays the games added to the user's cart, along with relevant information. This page serves as a hub for managing the games selected for reservation.
 
-<!-- ![Cart](./images/client_cart.png) -->
+![Cart](https://github.com/SJanna/purffectgames_client/assets/70728090/af4682ec-dc59-42ae-939a-219894b35900)
+
 
 ## Checkout
 
 The Checkout page presents a user-friendly form for completing the reservation process. Users can provide the necessary information and proceed to reserve their selected games.
 
-<!-- ![Checkout](./images/client_checkout.png) -->
+![Checkout](https://github.com/SJanna/purffectgames_client/assets/70728090/29040c88-c647-4d8e-a776-8cf5f4b60ea4)
+
 
 ## Login
 
@@ -52,7 +56,8 @@ The Login page enables users to authenticate and access their personalized profi
 (Actually, this page is just a placeholder, because the application doesn't have a authentication system yet)
 
 
-![Login](./images/client_login.png)
+![Login](https://github.com/SJanna/purffectgames_client/assets/70728090/7b7dae46-45c5-424d-ae48-699ef6669949)
+
 
 ## Technologies Used
 
